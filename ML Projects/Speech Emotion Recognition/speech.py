@@ -8,7 +8,13 @@ from sklearn.metrics import accuracy_score
 import speech_recognition as sr
 import tempfile
 import joblib
+import requests
 
+
+model_url = "https://github.com/priyagoyal25/ML-Projects/blob/287f9526a654d44678745d5ee6567f3f2c53d9cc/ML%20Projects/Speech%20Emotion%20Recognition/emotion_model.pkl"
+response = requests.get(model_url)
+with open("emotion_model.pkl", "wb") as f:
+    f.write(response.content)
 # Function to extract audio features
 def extract_feature(file_name, mfcc, chroma, mel):
     with soundfile.SoundFile(file_name) as sound_file:
@@ -32,7 +38,7 @@ def extract_feature(file_name, mfcc, chroma, mel):
 model = MLPClassifier(alpha=0.01, batch_size=256, epsilon=1e-08, hidden_layer_sizes=(300,), learning_rate='adaptive', max_iter=500)
 # Load your trained model
 
-model = joblib.load("https://github.com/priyagoyal25/ML-Projects/blob/287f9526a654d44678745d5ee6567f3f2c53d9cc/ML%20Projects/Speech%20Emotion%20Recognition/emotion_model.pkl")
+model = joblib.load("emotion_model.pkl")
 
 
 
