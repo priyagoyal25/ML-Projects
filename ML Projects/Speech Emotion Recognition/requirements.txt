@@ -1,0 +1,9 @@
+librosa
+soundfile
+scikit-neuralnetwork
+scikit-metrics
+SpeechRecognition
+tempfile
+joblib
+streamlit
+scikit-learn
