@@ -31,10 +31,9 @@ def extract_feature(file_name, mfcc, chroma, mel):
 # Load your trained model (replace with your actual model loading code)
 model = MLPClassifier(alpha=0.01, batch_size=256, epsilon=1e-08, hidden_layer_sizes=(300,), learning_rate='adaptive', max_iter=500)
 # Load your trained model
-if os.path.exists("emotion_model.pkl"):
-    model = joblib.load("emotion_model.pkl")
-else:
-    st.error("Error: Trained model not found. Please train and save your model first.")
+
+model = joblib.load("https://github.com/priyagoyal25/ML-Projects/blob/287f9526a654d44678745d5ee6567f3f2c53d9cc/ML%20Projects/Speech%20Emotion%20Recognition/emotion_model.pkl")
+
 
 
 # Function to predict emotion from an audio file
