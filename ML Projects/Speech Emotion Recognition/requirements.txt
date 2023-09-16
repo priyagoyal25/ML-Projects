@@ -3,7 +3,7 @@ soundfile
 scikit-neuralnetwork
 scikit-metrics
 SpeechRecognition
-tempfile
+temp
 joblib
 streamlit
 scikit-learn
