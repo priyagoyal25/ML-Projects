@@ -11,7 +11,7 @@ import joblib
 import requests
 
 
-model_url = "https://github.com/priyagoyal25/ML-Projects/blob/287f9526a654d44678745d5ee6567f3f2c53d9cc/ML%20Projects/Speech%20Emotion%20Recognition/emotion_model.pkl"
+model_url = "emotion_model.pkl"
 response = requests.get(model_url)
 with open("emotion_model.pkl", "wb") as f:
     f.write(response.content)
